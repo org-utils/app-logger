@@ -1,5 +1,5 @@
 {
-  "name": "app-logger",
+  "name": "api-loggers",
   "version": "0.0.1",
   "description": "Shared Logger configurations for Node.js projects",
   "main": "./dist/index.js",
