@@ -185,7 +185,7 @@ export class RequestLogger {
       ...rest,
       headers: headers ? this.sanitizeHeaders(headers) : undefined,
       body: body ? this.sanitizeBody(body) : undefined,
-    };
+    } as Partial<RequestContext>;
   }
 
   /**
