@@ -18,7 +18,7 @@ import { LoggerOptions } from './types.js';
 /**
  * Get console transport configuration
  */
-const getConsoleTransport = (options: LoggerOptions['console'] = {}, level: Level) => {
+const getConsoleTransport = (options: LoggerOptions['console'] = {}, _level: Level) => {
   const isProd = process.env.NODE_ENV === 'production';
   const enabled = options?.enabled !== false;
 
@@ -26,7 +26,7 @@ const getConsoleTransport = (options: LoggerOptions['console'] = {}, level: Leve
     return null;
   }
 
-  const consoleLevel = options?.level || level;
+  // const consoleLevel = options?.level || level;
 
   if (isProd || options?.pretty === false) {
     // Production: JSON lines for log aggregation
@@ -61,7 +61,7 @@ const getConsoleTransport = (options: LoggerOptions['console'] = {}, level: Leve
 /**
  * Create a file write stream with simple rotation
  */
-const createRotatingFileStream = (logDir: string, filename: string, isTest: boolean, maxSize: string = '20m', maxFiles: string = '14d'): DestinationStream | null => {
+const createRotatingFileStream = (logDir: string, filename: string, isTest: boolean, _maxSize: string = '20m', _maxFiles: string = '14d'): DestinationStream | null => {
   if (isTest) return null;
 
   // Ensure log directory exists
@@ -328,9 +328,6 @@ export function createServiceLogger(service: string, options: LoggerOptions = {}
 //   });
 // }
 
-function generateRequestId(): string {
-  return `${Date.now()}-${Math.random().toString(36).substring(2, 10)}`;
-}
 
 // ============ Default Export ============
 
