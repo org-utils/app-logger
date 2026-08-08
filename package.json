@@ -1,6 +1,6 @@
 {
   "name": "api-loggers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared Logger configurations for Node.js projects",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -62,7 +62,6 @@
   },
   "scripts": {
     "clean:dist": "rm -rf ./dist",
-
     "build:types": "tsc -b",
     "build:js": "tsup",
     "build": "npm run clean:dist && npm run build:types && npm run build:js",
